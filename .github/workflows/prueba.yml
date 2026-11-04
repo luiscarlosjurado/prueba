@@ -1,0 +1,27 @@
+name: prueba ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validar:
+    name: validar código
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar node job
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: validar sitaxis HTML
+        run: |
+          npx html-validate "**/*.html"
+
+      
