@@ -23,7 +23,7 @@ jobs:
       - name: validar sitaxis HTML
         run: |
           npx html-validate "**/*.html"
-      - name:
+      - name: mostrar mensaje
         run: echo "hola mundo"
 
       
