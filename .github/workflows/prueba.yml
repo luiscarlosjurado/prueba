@@ -20,10 +20,13 @@ jobs:
         with:
           node-version: 22
 
-      - name: validar sitaxis HTML
+      - name: validar codigo HTML
         run: |
+          echo "inicio"
           npx html-validate "**/*.html"
-      - name: mostrar mensaje
-        run: echo "hola mundo"
+          echo "fin"
+    
+
+
 
       

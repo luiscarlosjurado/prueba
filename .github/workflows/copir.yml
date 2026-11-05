@@ -1,0 +1,27 @@
+name: validar pagina web
+
+on:
+  push:
+    braches: [main]
+  pull_request: [main]
+
+jobs:
+  validar codigo:
+    name: descargar maquina virtual
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: clonar el repositorio
+        uses: actions/checkout@v4
+      
+      - name: instalar node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: validar codigo HTML
+        run: |
+          echo "inicio"
+          npx html-validate "**/*.html"
+          echo "fin"
+      
